@@ -36,13 +36,13 @@ chat.get_started("/GET_STARTED")
 def main(sender_id, lang, cmd, **ext):
     send_persistant(sender_id, lang, cmd, **ext)
     try:
-        # gpt = Gpt(conf_gpt)
-        gpt = Gpt(new_config)
+        gpt = Gpt(conf_gpt)
+        # gpt = Gpt(new_config)
         bot = gpt.chatbot
 
     except Exception as e:
         Logger.error(e)
-        chat.send_message(sender_id, translate("error", lang))
+        chat.send_message(sender_id, translate("error_gpt", lang))
         chat.send_message(
             env.get("ADMIN_SENDER_ID"),
             "Tu peux voir s'il te plaît j'ai encore un problème de token",
