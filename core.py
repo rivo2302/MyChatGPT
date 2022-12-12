@@ -104,14 +104,7 @@ def start(sender_id, lang, cmd, **ext):
 
     # Send the first Message to user
     send_persistant(sender_id, lang, cmd, **ext)
-    info_user = chat.get_user_info(sender_id)
-    greetings = (
-        translate("greetings", lang)
-        + info_user["first_name"]
-        + " "
-        + info_user["last_name"]
-    )
-    chat.send_message(sender_id, greetings)
+    chat.send_message(sender_id, translate("greetings", lang))
     chat.send_text(sender_id, translate("about_me", lang))
 
 
