@@ -25,16 +25,24 @@
         <a href='#'> 
             <img src='https://img.shields.io/badge/Maintained-Yes-darkgreen?style=for-the-badge'/>
         </a>  
+        <a href='#'> 
+            <img src='https://img.shields.io/badge/Opensource-Yes-darkyellow?style=for-the-badge'/>
+        </a>  
     </p>
 </div>
-
- 
-This repository use  <a href="https://github.com/acheong08/ChatGPT ">this module</a>  to interact with ChatGPT server.
 
 
 ## Need some test ? 
 
-GO TO =>  <a href="https://www.facebook.com/profile.php?id=100066483669203">The facebook page</a> 
+GO TO =>  <a href="https://www.facebook.com/profile.php?id=100066483669203">The facebook page</a> and send essage
+<br/><br/>
+
+## Credits 
+
+### <a href="https://github.com/iteam-s/Ampalibe">iTeam-$ Community (Everywhere)</a> 
+### <a href="https://github.com/acheong08/ChatGPT">Antonio Cheong</a> 
+
+<br/><br/>
 
 ## Contributors
 
