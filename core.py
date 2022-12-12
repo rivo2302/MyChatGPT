@@ -19,14 +19,16 @@ conf_gpt = {
     "cf_clearance": env.get("GPT_CF_CLEARANCE"),
     "user_agent": env.get("GPT_USER_AGENT"),
 }
-
-new_config = {
-    "Authorization": env.get("GPT_SESSION_TOKEN"),
-}
-
-
 query = Model(Configuration())
 chat = Messenger()
+
+try:
+    gpt = Gpt(conf_gpt)
+    bot = gpt.chatbot
+
+except Exception as e:
+    bot = None
+    Logger.error(e)
 
 
 chat.get_started("/GET_STARTED")
@@ -35,13 +37,7 @@ chat.get_started("/GET_STARTED")
 @ampalibe.command("/")
 def main(sender_id, lang, cmd, **ext):
     send_persistant(sender_id, lang, cmd, **ext)
-    try:
-        gpt = Gpt(conf_gpt)
-        # gpt = Gpt(new_config)
-        bot = gpt.chatbot
-
-    except Exception as e:
-        Logger.error(e)
+    if bot is None:
         chat.send_message(sender_id, translate("error_gpt", lang))
         chat.send_message(
             env.get("ADMIN_SENDER_ID"),
