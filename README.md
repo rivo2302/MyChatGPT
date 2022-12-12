@@ -17,6 +17,9 @@
     </p>
     <p>
         <a href='#'> 
+            <img src='https://img.shields.io/badge/version-developpement-red?style=for-the-badge'/>
+        </a>  
+        <a href='#'> 
             <img src='https://img.shields.io/badge/Ampalibe-1.0.7.dev-teal?style=for-the-badge'/>
         </a>  
         <a href='#'> 
@@ -25,6 +28,13 @@
     </p>
 </div>
 
+ 
+This repository use  <a href="https://github.com/acheong08/ChatGPT ">this module</a>  to interact with ChatGPT server.
+
+
+## Need some test ? 
+
+GO TO =>  <a href="https://www.facebook.com/profile.php?id=100066483669203">The facebook page</a> 
 
 ## Contributors
 
