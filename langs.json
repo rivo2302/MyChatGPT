@@ -1,0 +1,62 @@
+{
+    "language_question": {
+        "mg": "Safidio ary ny fiteninao :",
+        "fr": "Veuillez choisir votre langue :",
+        "en": "Choose your language :"
+    },
+    "language": {
+        "mg": "🇲🇬 Hiova fiteny",
+        "fr": "🇨🇵 Changer de langue",
+        "en": "🇬🇧 Change language"
+    },
+    "buy_me_a_coffee": {
+        "mg": "💵 Mametraha kely",
+        "fr": "☕ Achète moi du café",
+        "en": "☕ Buy me a coffee"
+    },
+    "buy_me_a_coffee_response": {
+        "mg": "Hatreto aloha mbola tsy inegré ato ireo api mobile money😁 Fa raha te handefa vola ianao dia miresaha aminy. \nFacebook: RAJAONARIVONY Rivo Lalaina.\nMisaotra mialoha😊",
+        "fr": "Pour le moment ,je ne suis pas encore 😁intégrée avec les paiements en ligne mais vous pouvez contacter cette personne et lui envoyer. \nFacebook : RAJAONARIVONY Rivo Lalaina .\nMerci😊",
+        "en": "For the moment, I am not yet 😁 integrated with online payments but you can contact this person and send to him. \nFacebook: RAJAONARIVONY Rivo Lalaina.\nThank you😊"
+    },
+    "greetings": {
+        "mg": "Salama eee👋",
+        "fr": "Bonjour👋",
+        "en": "Hello👋"
+    },
+    "about_me": {
+        "mg": "Je suis Assistant🤖 OpenSource 😊 tiré de la solution ChatGPT, un grand modèle de langage formé par OpenAI. Je suis un programme informatique conçu pour répondre aux questions des gens de manière intelligente et naturelle, comme si vous parliez à un être humain. \n PS🚨 : J'ai été créé avec la Framework Ampalibe de la communauté iTeam-$",
+        "fr": "Je suis Assistant🤖 OpenSource 😊 tiré de la solution ChatGPT, un grand modèle de langage formé par OpenAI. Je suis un programme informatique conçu pour répondre aux questions des gens de manière intelligente et naturelle, comme si vous parliez à un être humain. \n PS🚨 : J'ai été créé avec la Framework Ampalibe de la communauté iTeam-$",
+        "en": "I'm Assistant🤖 OpenSource 😊 taken from the ChatGPT solution, a large language model trained by OpenAI. I'm a computer program designed to answer people's questions intelligently and naturally, as if you were talking to a human. \n PS🚨: I was created with the Ampalibe Framework from the iTeam community-$"
+    },
+    "language_changed": {
+        "mg": "✅Voaova ny fiteninao 🇲🇬 ",
+        "fr": "✅La langue a été changée 🇨🇵",
+        "en": "✅Language changed 🇬🇧"
+    },
+    "language_not_changed": {
+        "mg": "❌Tsy voaova ny fiteny",
+        "fr": "❌La langue n'a pas été changée",
+        "en": "❌Language not changed"
+    },
+    "error_gpt": {
+        "mg": "⚠️Ialana tsiny fa misy olana kely ankehitriny ny fifandraisana miaraka amin'i ChatGPT",
+        "fr": "⚠️Désolé, il y a eu une erreur lors de la communication avec le serveur de ChatGPT pour le moment",
+        "en": "⚠️Sorry, there was an error communicating with the ChatGPT server for the moment"
+    },
+    "about": {
+        "mg": "🤖Momba ahy",
+        "fr": "🤖À propos de moi",
+        "en": "🤖About me"
+    },
+    "voir_repos": {
+        "mg": "👀Hijery ny code source",
+        "fr": "👀Voir le code source",
+        "en": "👀See the source code"
+    },
+    "go_github": {
+        "mg": "Hijery ny Github",
+        "fr": "Voir sur Github",
+        "en": "See on Github"
+    }
+}
