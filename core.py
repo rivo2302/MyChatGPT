@@ -11,7 +11,7 @@ from ampalibe import (
     Configuration,
 )
 import asyncio
-
+from utils.gpt import Gpt
 from utils.tools import correct_split
 
 conf_gpt = {
@@ -23,13 +23,37 @@ conf_gpt = {
 new_config = {
     "Authorization": env.get("GPT_SESSION_TOKEN"),
 }
-from utils.gpt import Gpt
+
 
 query = Model(Configuration())
 chat = Messenger()
 
 
 chat.get_started("/GET_STARTED")
+
+
+@ampalibe.command("/")
+def main(sender_id, lang, cmd, **ext):
+    send_persistant(sender_id, lang, cmd, **ext)
+    try:
+        # gpt = Gpt(conf_gpt)
+        gpt = Gpt(new_config)
+        bot = gpt.chatbot
+
+    except Exception as e:
+        Logger.error(e)
+        chat.send_message(sender_id, translate("error", lang))
+        chat.send_message(
+            env.get("ADMIN_SENDER_ID"),
+            "Tu peux voir s'il te plaît j'ai encore un problème de token",
+        )
+        return
+    # I get the message from the user , send it to the GPT-3 API and get the response
+    chat.send_action(sender_id, Action.typing_on)
+    message = asyncio.run(bot.get_chat_response(cmd))["message"]
+    message = correct_split(message)
+    for text in message:
+        chat.send_message(sender_id, text)
 
 
 def send_persistant(sender_id, lang, cmd, **ext):
@@ -73,30 +97,6 @@ def about_me(sender_id, lang, cmd, **ext):
     ]
 
     chat.send_button(sender_id, buttons, translate("voir_repos", lang))
-
-
-@ampalibe.command("/")
-def main(sender_id, lang, cmd, **ext):
-    send_persistant(sender_id, lang, cmd, **ext)
-    try:
-        gpt = Gpt(conf_gpt)
-        # gpt = Gpt(new_config)
-        bot = gpt.chatbot
-
-    except Exception as e:
-        Logger.error(e)
-        chat.send_message(sender_id, translate("error", lang))
-        chat.send_message(
-            env.get("ADMIN_SENDER_ID"),
-            "Tu peux voir s'il te plaît j'ai encore un problème de token",
-        )
-        return
-    # I get the message from the user , send it to the GPT-3 API and get the response
-    chat.send_action(sender_id, Action.typing_on)
-    message = asyncio.run(bot.get_chat_response(cmd))["message"]
-    message = correct_split(message)
-    for text in message:
-        chat.send_message(sender_id, text)
 
 
 @ampalibe.command("/GET_STARTED")
