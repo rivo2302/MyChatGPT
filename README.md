@@ -1,8 +1,8 @@
 </br>
 </br>
 <p align="center"> 
-    <img height="200" src="https://raw.githubusercontent.com/rivo2302/MyChatGPT/master/assets/public/chatgpt.png">
-    <img height="200" src="https://raw.githubusercontent.com/rivo2302/MyChatGPT/master/assets/public/ampalibe.png">
+    <img height="400" src="https://raw.githubusercontent.com/rivo2302/MyChatGPT/master/assets/public/chatgpt.jpg">
+    <img height="400" src="https://raw.githubusercontent.com/rivo2302/MyChatGPT/master/assets/public/ampalibe.png">
 </p>
 <div align="center"> 
     <p>
