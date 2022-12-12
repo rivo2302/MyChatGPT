@@ -68,7 +68,7 @@ def about_me(sender_id, lang, cmd, **ext):
         Button(
             type=Type.web_url,
             title=translate("go_github", lang),
-            url="https://github.com/iTeam-S/Ampalibe/blob/main/ampalibe/ui.py",
+            url="https://github.com/rivo2302/MyChatGPT",
         )
     ]
 
