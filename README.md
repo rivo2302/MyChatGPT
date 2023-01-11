@@ -1,3 +1,6 @@
+ <a href='#'> 
+            <img src='https://img.shields.io/badge/Project-Standby-red?style=for-the-badge'/>
+        </a>  
 </br>
 </br>
 <p align="center"> 
@@ -34,13 +37,12 @@
 
 ## Need some test ? 
 
-GO TO =>  <a href="https://www.facebook.com/profile.php?id=100066483669203">The facebook page</a> and send essage
-<br/><br/>
+Currently the project is not yet in production mode.
 
 ## Credits 
 
-### <a href="https://github.com/iteam-s/Ampalibe">iTeam-$ Community (Everywhere)</a> 
-### <a href="https://github.com/acheong08/ChatGPT">Antonio Cheong</a> 
+##### <a href="https://github.com/iteam-s/Ampalibe">iTeam-$ Community</a> 
+##### <a href="https://github.com/acheong08/ChatGPT">Antonio Cheong</a> 
 
 <br/><br/>
 
