@@ -10,46 +10,27 @@ from ampalibe import (
     Logger,
     Configuration,
 )
-import asyncio
-from utils.gpt import Gpt
-from utils.tools import correct_split
+from utils.ai import OpenAI
 
-conf_gpt = {
-    "session_token": env.get("GPT_TOKEN"),
-    "cf_clearance": env.get("GPT_CF_CLEARANCE"),
-    "user_agent": env.get("GPT_USER_AGENT"),
-}
+
 query = Model(Configuration())
 chat = Messenger()
-
-try:
-    gpt = Gpt(conf_gpt)
-    bot = gpt.chatbot
-
-except Exception as e:
-    bot = None
-    Logger.error(e)
-
+gpt = OpenAI(env.get("OPENAI_API_KEY"))
 
 chat.get_started("/GET_STARTED")
 
 
 @ampalibe.command("/")
 def main(sender_id, lang, cmd, **ext):
+    print("here")
     send_persistant(sender_id, lang, cmd, **ext)
-    if bot is None:
-        chat.send_message(sender_id, translate("error_gpt", lang))
-        chat.send_message(
-            env.get("ADMIN_SENDER_ID"),
-            "Tu peux voir s'il te plaît j'ai encore un problème de token",
-        )
-        return
-    # I get the message from the user , send it to the GPT-3 API and get the response
     chat.send_action(sender_id, Action.typing_on)
-    message = asyncio.run(bot.get_chat_response(cmd))["message"]
-    message = correct_split(message)
-    for text in message:
-        chat.send_message(sender_id, text)
+    response = gpt.generate(prompt=cmd, temperature=0.5, max_tokens=4000)
+    if response:
+        chat.send_message(sender_id, response)
+    else:
+        chat.send_message(sender_id, translate("error", lang))
+    print(response)
 
 
 def send_persistant(sender_id, lang, cmd, **ext):
@@ -77,6 +58,7 @@ def send_persistant(sender_id, lang, cmd, **ext):
 @ampalibe.before_receive()
 def before_process(sender_id, cmd, **ext):
     chat.send_action(sender_id, Action.mark_seen)
+    chat.send_action(sender_id, Action.typing_on)
     return True
 
 
