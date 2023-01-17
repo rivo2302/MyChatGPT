@@ -29,9 +29,9 @@ def main(sender_id, lang, cmd, **ext):
     if response:
         response = correct_split(response)
         for r in response:
-            chat.send_message(sender_id, r)
+            chat.send_text(sender_id, r)
     else:
-        chat.send_message(sender_id, translate("error", lang))
+        chat.send_text(sender_id, translate("error_gpt", lang))
     chat.send_action(sender_id, Action.typing_off)
 
 
