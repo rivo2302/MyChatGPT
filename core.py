@@ -11,6 +11,7 @@ from ampalibe import (
     Configuration,
 )
 from utils.ai import OpenAI
+from utils.tools import correct_split
 
 
 query = Model(Configuration())
@@ -22,15 +23,16 @@ chat.get_started("/GET_STARTED")
 
 @ampalibe.command("/")
 def main(sender_id, lang, cmd, **ext):
-    print("here")
     send_persistant(sender_id, lang, cmd, **ext)
     chat.send_action(sender_id, Action.typing_on)
     response = gpt.generate(prompt=cmd, temperature=0.5, max_tokens=4000)
     if response:
-        chat.send_message(sender_id, response)
+        response = correct_split(response)
+        for r in response:
+            chat.send_message(sender_id, r)
     else:
         chat.send_message(sender_id, translate("error", lang))
-    print(response)
+    chat.send_action(sender_id, Action.typing_off)
 
 
 def send_persistant(sender_id, lang, cmd, **ext):
