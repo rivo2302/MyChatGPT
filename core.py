@@ -26,27 +26,16 @@ chat.get_started("/GET_STARTED")
 
 @ampalibe.command("/")
 def main(sender_id, lang, cmd, **ext):
-<<<<<<< HEAD
-    print("here")
-=======
->>>>>>> 086f94eb448730b0e058275d596b888e23252f88
     send_persistant(sender_id, lang, cmd, **ext)
     chat.send_action(sender_id, Action.typing_on)
     response = gpt.generate(prompt=cmd, temperature=0.5, max_tokens=4000)
     if response:
-<<<<<<< HEAD
-        chat.send_message(sender_id, response)
-    else:
-        chat.send_message(sender_id, translate("error", lang))
-    print(response)
-=======
         response = correct_split(response)
         for r in response:
             chat.send_text(sender_id, r)
     else:
         chat.send_text(sender_id, translate("error_gpt", lang))
     chat.send_action(sender_id, Action.typing_off)
->>>>>>> 086f94eb448730b0e058275d596b888e23252f88
 
 
 def send_persistant(sender_id, lang, cmd, **ext):
