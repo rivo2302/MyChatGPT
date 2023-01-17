@@ -1,0 +1,2 @@
+ampalibe  #Vous de devez installer la version 1.1.7.dev depuis github
+openai
