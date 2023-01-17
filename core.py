@@ -11,10 +11,7 @@ from ampalibe import (
     Configuration,
 )
 from utils.ai import OpenAI
-<<<<<<< HEAD
-=======
 from utils.tools import correct_split
->>>>>>> 086f94eb448730b0e058275d596b888e23252f88
 
 
 query = Model(Configuration())
